@@ -1,31 +1,38 @@
 {
-  "name": "react-infinite-scroll",
-  "version": "0.1.5",
+  "name": "react-infinite-scroll-list",
+  "version": "0.1.0",
   "description": "",
-  "main": "src/react-infinite-scroll.js",
+  "main": "src/react-infinite-scroll-list.js",
   "scripts": {
-    "test": "grunt lint"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/guillaumervls/react-infinite-scroll.git"
+    "url": "git://github.com/Predjo/react-infinite-scroll.git"
   },
   "keywords": [
     "infinite",
     "scroll",
     "react"
   ],
-  "author": "guillaumervls",
+  "author": "Predjo",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/guillaumervls/react-infinite-scroll/issues"
-  },
+
+  "dependencies": {
+    "react": "~0.14.7",
+    "react-dom": "~0.14.7",
+    "classnames": "~2.1.2",
+    "react-addons-css-transition-group": "~0.14.7"
+  },  
+
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.7.0",
-    "grunt-contrib-uglify": "~0.2.4",
-    "grunt-contrib-clean": "~0.5.0",
-    "browserify": "~2.35.0",
-    "grunt-browserify": "~1.2.9"
+    "babel-eslint": "~5.0.0",
+    "babelify": "~6.1.2",    
+    "browserify": "~13.0.0",
+    "gulp": "~3.9.0",
+    "eslint": "~2.2.0",
+    "eslint-plugin-react": "~4.1.0",
+    "gulp-uglify": "~1.5.3",
+    "gulp-streamify": "~1.0.2",
+    "vinyl-source-stream": "~1.1.0"
   }
 }
