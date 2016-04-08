@@ -6,7 +6,7 @@ Added more options including transitions and support for React 0.14 and up.
 
 # Getting started
 
-Install : `npm install react-infinite-scroll-list` (soon)
+Install : `npm install --save react-infinite-scroll-list` (soon)
 
 ES5 :
 ```javascript
