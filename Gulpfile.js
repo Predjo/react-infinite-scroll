@@ -14,13 +14,13 @@ gulp.task('clean', function() {
 
 gulp.task('build', ['clean'], function() {
 
-  return browserify(['./src/react-infinite-scroll.js'])
+  return browserify(['./src/react-infinite-scroll-list.js'])
     .transform(babel.configure({
       optional: ['spec.protoToAssign', 'es7.classProperties']
     }))
     .bundle()
     .on('error', console.log.bind(console))
-    .pipe(source('react-infinite-scroll.js'))
+    .pipe(source('react-infinite-scroll-list.js'))
     .pipe(streamify(uglify()))
     .pipe(gulp.dest('./dist/'));
 });

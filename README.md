@@ -1,50 +1,49 @@
-React Infinite Scroll
+React Infinite Scroll List
 =====================
 
-*React infinite scroll component*
-
-Demo: http://jsfiddle.net/mb9vJ/2
+React infinite scroll component based on React Infinite Scroll by [guillaumervls](https://github.com/guillaumervls).
+Added more options including transitions and support for React 0.14 and up.
 
 # Getting started
 
-### Classic :
+Install : `npm install react-infinite-scroll-list` (soon)
 
-The "ready to use" [script file](https://raw.github.com/guillaumervls/react-infinite-scroll/master/dist/react-infinite-scroll.min.js)
-is in the `dist` folder.
-
-Then :
-```html
-<script src='react-infinite-scroll.min.js'></script>
-<script>
-  var InfiniteScroll = React.addons.InfiniteScroll;
-</script>
-```
-
-### [Browserify](https://github.com/substack/node-browserify) :
-̀
-Install : `npm install react-infinite-scroll`
-
-Then :
+ES5 :
 ```javascript
-InfiniteScroll = require('react-infinite-scroll')(React);
+var InfiniteScrollList = require('react-infinite-scroll-list');
 ```
 
-### Also works with AMD (e.g [RequireJS](http://requirejs.org))
-
-In this case, it will depend on `react`.
-
+ES6 :
+```javascript
+import InfiniteScrollList from 'react-infinite-scroll-list';
+```
 
 # Use in JSX
 
 ```html
-<InfiniteScroll
-    pageStart=0
-    loadMore={loadFunc}
-    hasMore={true || false}
-    loader={<div className="loader">Loading ...</div>}>
+<InfiniteScrollList
+  element="ul"
+  targetSelf={true}
+  pageStart=0
+  loadMore={loadFunc}
+  hasMore={true || false}
+  transition={{
+    transitionName         : 'list-tranistion',
+    transitionEnterTimeout : 250,
+    transitionLeaveTimeout : 250,
+  }}
+  loader={<div className="loader">Loading ...</div>}>
   {items} // <-- This is the "stuff" you want to load
-</InfiniteScroll>
+</InfiniteScrollList>
 ```
+
+- `element` : Wrapping element for the component
+
+- `targetSelf(bool)` : Listents for the scroll event on the wrapping element instead of the window
+
+- `targetParent(bool)` : Listents for the scroll event on immediate parent of the wrapping element instead of the window
+
+- `targetById(string)` : Listents for the scroll event on the element specified by ID instead of the window
 
 - `pageStart` : The page number corresponding to the initial `items`, defaults to `0`
                 which means that for the first loading, `loadMore` will be called with `1`
@@ -63,27 +62,21 @@ In this case, it will depend on `react`.
                 window's viewport that triggers the loading of new stuff -
                 *Defaults to `250`*
 
-
-## Changelog
-
-### v0.1.0
-
-`loader` now takes a React component
-(no more component constructor or object `{component:... , props:... , ...}`).
+- `transition(object)` : Object including props for the ReactCSSTransitionGroup. If set it enables transitions.
 
 
 ## (Re)build
 
 ```
 npm install
-grunt dist
+gulp build
 ```
 
 ### Licence
 
 **The MIT License (MIT)**
 
-*Copyright (c) 2013 guillaumervls*
+*Copyright (c) 2016 Predjo*
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
