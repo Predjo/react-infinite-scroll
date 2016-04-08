@@ -1,9 +1,8 @@
 'use strict';
 
-import React, { PropTypes } from 'react';
-import ReactDOM             from 'react-dom';
-import cx                   from 'classnames';
-import RCG                  from 'react-addons-css-transition-group';
+import React, { PropTypes, Children } from 'react';
+import ReactDOM                       from 'react-dom';
+import RCG                            from 'react-addons-css-transition-group';
 
 class InfiniteList extends React.Component {
 
@@ -45,12 +44,11 @@ class InfiniteList extends React.Component {
   }
 
   componentDidUpdate() {
-    if (Array.isArray(this.props.children)) {
-      const itemNum  = this.props.children.length;
-      if (itemNum > 0 && itemNum !== this.itemNum && this.props.hasMore) {
-        this.itemNum = itemNum;
-        this.attachScrollListener();
-      }
+    const children = Children.toArray(this.props.children);
+    const itemNum  = children.length;
+    if (itemNum > 0 && itemNum !== this.itemNum && this.props.hasMore) {
+      this.itemNum = itemNum;
+      this.attachScrollListener();
     }
   }
 
@@ -125,9 +123,9 @@ class InfiniteList extends React.Component {
   }
 
   render() {
-    const { children, element, transition, hasMore, loader } = this.props;
+    const { children, element, transition, hasMore, loader, className } = this.props;
     const props     = {};
-    props.className = cx('infinite-scroll-container', this.props.className);
+    props.className = (className ? className + ' ' : '') + 'infinite-scroll-container';
 
     if (transition) {
       const transitionProps = { ...props, component : element, ...transition };
