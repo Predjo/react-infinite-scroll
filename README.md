@@ -69,6 +69,12 @@ import InfiniteScrollList from 'react-infinite-scroll-list';
 npm install && npm run build
 ```
 
+## Run tests
+
+```
+npm test
+```
+
 ### Licence
 
 **The MIT License (MIT)**

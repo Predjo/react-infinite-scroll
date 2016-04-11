@@ -21,7 +21,7 @@ class SimpleList extends React.Component {
   }
 
   getNumberList(size) { //Just generate a list [0 ... size]
-    return Array.apply(null, Array(size)).map(function (_, i) {return i;});;
+    return Array.apply(null, Array(size)).map((_, i) => i);
   }
 
   render() {
