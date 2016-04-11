@@ -33,6 +33,7 @@ class SimpleList extends React.Component {
           loadMore = { this.loadMore }
           hasMore = { this.hasMoreToLoad() }
           element = "ul"
+          targetParent
           pageStart = { 0 }>
           {
             list.map((item, index) => (<li key={ index } style={{ height : 40 }} >{item}</li>))
