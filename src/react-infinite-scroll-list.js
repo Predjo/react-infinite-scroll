@@ -2,7 +2,6 @@
 
 import React, { PropTypes, Children } from 'react';
 import ReactDOM                       from 'react-dom';
-import RCG                            from 'react-addons-css-transition-group';
 
 class InfiniteList extends React.Component {
 
@@ -129,6 +128,7 @@ class InfiniteList extends React.Component {
 
     if (transition) {
       const transitionProps = { ...props, component : element, ...transition };
+      const RCG = require('react-addons-css-transition-group');
       return React.createElement(RCG, transitionProps, children, hasMore && loader);
     } else {
       return React.createElement(element, props, children, hasMore && loader);

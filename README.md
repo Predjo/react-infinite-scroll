@@ -66,8 +66,7 @@ import InfiniteScrollList from 'react-infinite-scroll-list';
 ## (Re)build
 
 ```
-npm install
-gulp build
+npm install && npm run build
 ```
 
 ### Licence
