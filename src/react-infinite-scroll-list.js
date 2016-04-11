@@ -77,8 +77,8 @@ class InfiniteList extends React.Component {
     if (this.props.hasMore && !this.listener) {
       const target  = this._getTarget();
       this.listener = this.scrollListener.bind(this);
-      target.addEventListener('scroll', this.listener);
-      target.addEventListener('resize', this.listener);
+      //target.addEventListener('scroll', this.listener);
+      //target.addEventListener('resize', this.listener);
     }
   }
 

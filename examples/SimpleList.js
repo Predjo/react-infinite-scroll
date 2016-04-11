@@ -21,11 +21,11 @@ class SimpleList extends React.Component {
   }
 
   getNumberList(size) { //Just generate a list [0 ... size]
-    return Array(size).keys();
+    return Array.apply(null, Array(size)).map(function (_, i) {return i;});;
   }
 
   render() {
-    const { list } = this.state;
+    const { list = [] } = this.state;
 
     return (
       <div className="list-wrap" style={{ height : 200, overflow: 'auto' }}>
