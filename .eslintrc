@@ -4,7 +4,8 @@
   "env": {
     "browser": true,
     "node": true,
-    "es6": true
+    "es6": true,
+    "jasmine": true
   },
   "globals": {
     "__DEV__": true,
@@ -12,11 +13,13 @@
     "jest": true
   },
   "plugins": [
-    "react"
+    "react",
+    "jasmine"
   ],
   "ecmaFeatures": {
     "jsx": true
   },
+  "extends" : ["plugin:jasmine/recommended"],
   "rules": {
     "strict": [0, "global"],
 

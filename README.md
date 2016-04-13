@@ -1,7 +1,7 @@
 React Infinite Scroll List
 =====================
 
-React infinite scroll component based on React Infinite Scroll by [guillaumervls](https://github.com/guillaumervls).
+Simple React infinite scroll component based on React Infinite Scroll by [guillaumervls](https://github.com/guillaumervls).
 Added more options including transitions and support for React 0.14 and up.
 
 # Getting started
